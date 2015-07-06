@@ -13,9 +13,8 @@ Lorem ipsum
 
 ## Project Kick Off
 
-Artemis Consulting kicked off this “PROJECT_NAME” in agile fashion by assembling the project team and discussing the 18F opportunity/problem statement. This statement describes the current business’s situation that creates the need for this project. We decided on the following statement: “We should be able to produce a FDA API product better, faster, (and cheaper), than our competitors – and win one of the BPAs in the process”. 
-Next, we created a concise vision statement to ensure that the solution actually meets the intended product owner and users’ goals.  A shared Vision Statement among all team members helps ensure that the solution meets the intended goals while keeping the team laser focused. Below is our project vision.
-“To deliver the highest quality and most elegant API driven website for the public audiences within the next 6 days”.  
+Artemis Consulting kicked off this agile project nicknamed "FDA Drug Monitor" by assembling the project team and discussing the 18F opportunity/problem statement. This statement describes the current business’s situation that creates the need for this project. We decided on the following statement: “We should be able to produce a usable, mobile-friendly and accessible public website using OpenFDA's APIs for drugs, and win one of the BPAs in the process”. 
+Next, we created a concise vision statement to ensure that the solution actually meets the intended product owner and users’ goals.  This shared Vision Statement helped to keep our team focused: "To deliver a fast, responsive and intuitive API-driven website using the Drug Labels API, Adverse Events API and Enforcement Actions API that brings information together for the public and other potential users in a holistic fashion, within the next 6 days".  
 
 ## Kickoff
 Although we apply LEAN to many of our projects, we decided not to submit a MVP but a fully functional website instead. Upon completion of vision statement, we discussed the high level architecture, team composition, user roles and personas, product scope and key features, and decided on various scrum ceremonies.  The next section summarizes the remainder of our kick-off meeting.
