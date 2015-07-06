@@ -150,73 +150,52 @@ Unit testing reduces the amount of bugs get into the code and potentially, into 
 
 #### Prerequisites for Development Environment
 
-Install the versions listed above for Python, Django, Less, Memcached and Postgresql. 
+Install the following for system level dependencies for Ubuntu
 ```shell
-$ sudo apt-get install python
-$ sudo apt-get install django
-$ sudo apt-get install less
-$ sudo apt-get install memcached
-$ sudo apt-get install postgresql
+$ sudo apt-get install python python-dev apache2 libapache2-mod-wsgi git python_psycopg2 libpq-dev memcached
 ```
 
-Install the following Python modules using pip. 
-
-
-apt-xapian-index (0.45)
-chardet (2.0.1)
-Cheetah (2.4.4)
-cloud-init (0.7.5)
-colorama (0.2.5)
-configobj (4.7.2)
-dj-database-url (0.3.0)
-Django (1.8.2)
-django-nose (1.4)
-django-rednoise (1.0.5)
-gunicorn (19.3.0)
-html5lib (0.999)
-jsonpatch (1.3)
-jsonpointer (1.0)
-Landscape-Client (14.12)
-mock (1.0.1)
-nose (1.3.7)
-oauth (1.0.1)
-PAM (0.4.2)
-pip (7.1.0)
-prettytable (0.7.2)
-pycurl (7.19.3)
-pyOpenSSL (0.13)
-pyserial (2.6)
-python-apt (0.9.3.5ubuntu1)
-python-debian (0.1.21-nmu2ubuntu2)
-python-memcached (1.54)
-PyYAML (3.10)
-requests (2.7.0)
-selenium (2.44.0)
-setuptools (3.3)
-six (1.5.2)
-ssh-import-id (3.21)
-Twisted-Core (13.2.0)
-Twisted-Names (13.2.0)
-Twisted-Web (13.2.0)
-urllib3 (1.7.1)
-virtualenv (1.11.4)
-wheel (0.24.0)
-whitenoise (2.0)
-zope.interface (4.0.5)
-
-The requirements.text file that is part of the "code" directory can be sent to pip. 
+Clone this repository into desired $APP_DIR
 ```shell
- pip install -r code/requirements.txt
+$ git clone https://github.com/artemis-consulting/prototype-pool3 $APP_DIR
+$ cd $APP_DIR/code
 ```
+Create the database:
+```shell
+sudo su - postgres
+createdb prototype
+createuser -P proto_user
+```
+choose 'proto_pass' as password.  If choosing a different password, keep it handy to modify in the settings file later.
+```shell
+psql
+```
+Grant privileges to the user
+```shell
+# GRANT ALL PRIVILEGES ON DATABASE prototype TO proto_user;
+```
+Create a virtualenv
+```shell
+virtualenv aretmisprototype
+source $APP_DIR/artemisprototype/bin/activate
+```
+Install the Python modules using pip. 
+```shell
+pip install -r code/requirements.txt
+```
+
+Run django commands
+```shell
+python manage.py migrate
+python manage.py collectstatic
+```
+
+Make changes to the settings file if needed.
+Change DATABASE settings if you changed the password for example
+Change ALLOWED_HOSTS to appropriate domain name if you're not using localhost
+
 
 ### Running Locally
-
-Clone this repository
-
-```shell
-$ git clone https://github.com/artemis-consulting/prototype-pool3
-$ cd code
-```
 
 Set up Apache using mod_wsgi
 https://code.djangoproject.com/wiki/django_apache_and_mod_wsgi
