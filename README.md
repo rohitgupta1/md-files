@@ -20,7 +20,7 @@ Next, we created a concise vision statement to ensure that the solution actually
 ## Kickoff
 Although we apply LEAN to many of our projects, we decided not to submit a MVP but a fully functional website instead. Upon completion of vision statement, we discussed the high level architecture, team composition, user roles and personas, product scope and key features, and decided on various scrum ceremonies.  The next section summarizes the remainder of our kick-off meeting.
 
-* **Team roles**
+####Team roles
 
 Project leader (Product Owner) – Rohit G.
 Scrum master – Jim T.
@@ -30,10 +30,10 @@ UX – Hoa P.
 Web design – David N.
 DevOps – Jay M.
 
-* **User roles**
+####User roles
 Public users, doctors, pharmacists, attorneys, FDA experts, Federal Watchdogs agencies, state regulators
 
-* **Scrum ceremonies**
+####Scrum ceremonies
 Daily standups at 10:30am, 2-day sprints, sprint planning every other day, review, retro, and release planning to occur and the end of each sprint, entire team to attend all meetings. 
 
 #### Configuration Management
@@ -43,7 +43,7 @@ Daily standups at 10:30am, 2-day sprints, sprint planning every other day, revie
 ####Tools 
 Slack was selected for chatting and online collaboration, Taiga.io for Agile project management, and GitHub for code versioning.
 
-* **Initial technology stack**: See final here **
+## Initial technology stack: See final[Final stack] here 
 #### Front-end development
 Django templates 1.8.2
 JavasScript/jQuery
@@ -51,16 +51,16 @@ Bootstrap/Bootswatch Paper theme
 Highcharts chart and mapping widgets
 (Proprietary) accessibility toolkit
 
-#### Back-end development**
+#### Back-end development
 Apache 2.4.7
 Python 2.7.10
 Django 1.8.2
 Memcached 1.4.27 
 Postgres 9.4
 
-#### Testing**
+#### Testing
 Selenium
-Django testing framework
+pyunit testing framework
 
 #### Environments 
 We used Pivotal Web Services CloudFoundry as the development/test environment and Amazon Web Services as our production environment. Developers coded on their local machines (running Ubuntu/MacOS).
@@ -77,12 +77,12 @@ We used Pivotal Web Services CloudFoundry as the development/test environment an
 
 In most of our current client projects, we follow an integrated ‘User-Centered Design’ processes in which we strongly encourage end-users to influence how the final design takes shape. For the FDA project, we decided on the following techniques (mainly due to time constrains).
 
-* **Our Approach** - Read about the [approach] Artemis used to develop this prototype
+## Our Approach - Read about the [approach] Artemis used to develop this prototype
 
-* **Project Vision** - 
-* **Prototype**: [http://opendatafda-artemis-staging.cfapps.io or http://demo.artemisconsultinginc.com](http://opendatafda-artemis-staging.cfapps.io) continuously deployed on [Pivotal CloudFoundry](http://pivotal.io/platform-as-a-service/pivotal-cloud-foundry)
+## Prototype
+[http://opendatafda-artemis-staging.cfapps.io or http://demo.artemisconsultinginc.com](http://opendatafda-artemis-staging.cfapps.io) continuously deployed on [Pivotal CloudFoundry](http://pivotal.io/platform-as-a-service/pivotal-cloud-foundry)
 
-### Prerequisites for Development Environment
+#### Prerequisites for Development Environment
 
 Install the versions listed above for Python, Django, Less, Memcached and Postgresql. 
 ```shell
