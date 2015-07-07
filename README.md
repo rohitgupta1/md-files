@@ -196,9 +196,33 @@ Change ALLOWED_HOSTS to appropriate domain name if you're not using localhost
 
 
 ### Running Locally
-
+To test the install, use django's runserver command
+```shell
+python manage.py runserver
+```
+You can now open [http://localhost:8000](http://localhost:8000) in your browser.
 Set up Apache using mod_wsgi
 https://code.djangoproject.com/wiki/django_apache_and_mod_wsgi
+
+Sample apache config for django running daemon mode with virtualenv:
+```shell
+<VirtualHost *:80>
+
+ WSGIDaemonProcess prototype python-path=/apps/prototype/code:/apps/env/lib/python2.7/site-packages
+ WSGIScriptAlias / /apps/prototype/code/opendata_fda/wsgi.py process-group=prototype
+
+ Alias /static/ /apps/prototype/code/.static/
+ 
+ <Directory /apps/prototype/code/opendata_fda>
+ Require all granted
+ </Directory>
+ 
+ <Directory /apps/prototype/code/.static>
+ Require all granted
+ </Directory>
+ 
+</VirtualHost>
+```
 
 Start Apache
 
@@ -209,14 +233,14 @@ You can now open [http://localhost:80](http://localhost:80) in your browser.
 
 #### Unit tests
 
-To run the unit tests, use the pyunit task:
+To run the unit tests, use django's test framework with coverage
 ```shell
-$ 
+$ python manage.py test core --with-coverage --cover-html --cover-package=core
 ```
+The unit tests will also kick off the selenium tests.
 You can view the full details of coverage in a drill-down enabled report by opening:
 
- - Backend report: `...`
- - Frontend report: `..`
+ - Backend report: $APP_DIR/cover/index.html
 
 ## Deploying
 
